@@ -25,7 +25,7 @@ static int run_usermode_process(void)
 
     printk(KERN_INFO "kmod_launcher: Attempting to run %s %s\n", target_program, target_arg);
 
-    result = call_usermodehelper(argv[0], argv, envp, UMH_WAIT_PROC);
+    result = call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT);
 
     if (result < 0) {
         printk(KERN_ERR "kmod_launcher: Error executing command. Code: %d\n", result);
